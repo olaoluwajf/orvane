@@ -50,7 +50,7 @@ main#main > section {
   isolation: isolate;
 }
 
-main#main > section:not(:nth-of-type(6n)):not(:nth-of-type(9n)):not(:nth-of-type(10n)):not(:nth-of-type(12n)) {
+main#main > section:not(.home-hero-split):not(:nth-of-type(6n)):not(:nth-of-type(9n)):not(:nth-of-type(10n)):not(:nth-of-type(12n)) {
   --color-ink: #000000;
   --color-surface: #000000;
   --color-raised: #000000;
@@ -79,7 +79,7 @@ main#main > section:nth-of-type(12n) {
   color: #000000;
 }
 
-html[data-theme="light"] main#main > section:not(:nth-of-type(6n)):not(:nth-of-type(9n)):not(:nth-of-type(10n)):not(:nth-of-type(12n)) {
+html[data-theme="light"] main#main > section:not(.home-hero-split):not(:nth-of-type(6n)):not(:nth-of-type(9n)):not(:nth-of-type(10n)):not(:nth-of-type(12n)) {
   --color-ink: #ffffff;
   --color-surface: #ffffff;
   --color-raised: #ffffff;
@@ -108,15 +108,90 @@ html[data-theme="light"] main#main > section:nth-of-type(12n) {
   color: #ffffff;
 }
 
+main#main > section.home-hero-split {
+  --color-ink: #000000;
+  --color-surface: #000000;
+  --color-raised: #000000;
+  --color-line: #292929;
+  --color-fg: #f2f2f2;
+  --color-muted: #a1a1a1;
+  --color-accent: #f2f2f2;
+  --color-accent-strong: #d6d6d6;
+  background: linear-gradient(to right, #000000 50%, #ffffff 50%);
+  color: #f2f2f2;
+}
+
+html[data-theme="light"] main#main > section.home-hero-split {
+  --color-ink: #ffffff;
+  --color-surface: #ffffff;
+  --color-raised: #ffffff;
+  --color-line: #dedede;
+  --color-fg: #171717;
+  --color-muted: #626262;
+  --color-accent: #171717;
+  --color-accent-strong: #333333;
+  background: linear-gradient(to right, #ffffff 50%, #000000 50%);
+  color: #171717;
+}
+
 html:not([data-theme="light"]) main#main > section:nth-of-type(6n)::before,
-html[data-theme="light"] main#main > section:nth-of-type(4n+1):not(:nth-of-type(3n))::before {
+html[data-theme="light"] main#main > section:nth-of-type(9n)::before {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
   content: "";
   opacity: .18;
   pointer-events: none;
+}
+
+.home-hero-copy,
+.home-hero-visual {
+  --color-ink: #000000;
+  --color-surface: #000000;
+  --color-raised: #000000;
+  --color-line: #292929;
+  --color-fg: #f2f2f2;
+  --color-muted: #a1a1a1;
+  --color-accent: #f2f2f2;
+  --color-accent-strong: #d6d6d6;
+  color: #f2f2f2;
+}
+
+.home-hero-visual {
+  --color-ink: #ffffff;
+  --color-surface: #ffffff;
+  --color-raised: #ffffff;
+  --color-line: #dedede;
+  --color-fg: #000000;
+  --color-muted: #595959;
+  --color-accent: #000000;
+  --color-accent-strong: #333333;
+  color: #000000;
+}
+
+html[data-theme="light"] .home-hero-copy {
+  --color-ink: #ffffff;
+  --color-surface: #ffffff;
+  --color-raised: #ffffff;
+  --color-line: #dedede;
+  --color-fg: #171717;
+  --color-muted: #626262;
+  --color-accent: #171717;
+  --color-accent-strong: #333333;
+  color: #171717;
+}
+
+html[data-theme="light"] .home-hero-visual {
+  --color-ink: #000000;
+  --color-surface: #000000;
+  --color-raised: #000000;
+  --color-line: #333333;
+  --color-fg: #ffffff;
+  --color-muted: #b3b3b3;
+  --color-accent: #ffffff;
+  --color-accent-strong: #e0e0e0;
+  color: #ffffff;
 }
 
 img {

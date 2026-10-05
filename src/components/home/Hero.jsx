@@ -7,11 +7,11 @@ const HEADLINE = 'AI support that answers customers instantly'.split(' ')
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-14 sm:pt-24">
+    <section className="home-hero-split relative overflow-hidden pb-20 pt-14 sm:pt-24">
       <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden />
       <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
       <Container className="relative grid items-center gap-16 lg:grid-cols-[1.1fr_1fr]">
-        <div className="text-center lg:text-left">
+        <div className="home-hero-copy text-center lg:text-left">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 px-3.5 py-1.5 text-sm text-muted" style={{ animation: 'rise .6s both' }}>
             <span className="relative flex size-2"><span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/70" /><span className="relative size-2 rounded-full bg-emerald-400" /></span>
             Instant AI support, live 24/7
@@ -31,7 +31,7 @@ export default function Hero() {
             <Button href="/#how-it-works" variant="ghost" className="px-7 py-3">See how it works</Button>
           </div>
         </div>
-        <div style={{ animation: 'rise 1s ease-out both', animationDelay: '500ms' }}><RoutingScene /></div>
+        <div className="home-hero-visual" style={{ animation: 'rise 1s ease-out both', animationDelay: '500ms' }}><RoutingScene /></div>
       </Container>
     </section>
   )
