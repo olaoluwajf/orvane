@@ -4,7 +4,7 @@ import { TESTIMONIAL as t } from '../../data/site'
 
 export default function Testimonial() {
   return (
-    <section className="border-t border-line bg-surface/40 py-20 sm:py-28">
+    <section className="border-t border-line py-20 sm:py-28">
       <Container>
         <SectionHeading
           label="Testimonial"

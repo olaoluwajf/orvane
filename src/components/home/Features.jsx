@@ -8,7 +8,7 @@ export default function Features() {
   const feature = FEATURES.find((f) => f.id === active)
 
   return (
-    <section id="features" className="border-t border-line bg-surface/40 py-20 sm:py-28">
+    <section id="features" className="border-t border-line py-20 sm:py-28">
       <Container>
         <SectionHeading
           label="Features"
