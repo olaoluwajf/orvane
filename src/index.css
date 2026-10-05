@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --color-ink: #0b0c0f;
   --color-surface: #121418;
   --color-raised: #181b21;
@@ -15,6 +16,7 @@
 @layer base {
   html { scroll-behavior: smooth; color-scheme: dark; }
   body { @apply bg-ink text-fg font-sans antialiased; }
+  h1, h2, h3 { font-family: var(--font-display); }
   ::selection { background: color-mix(in srgb, var(--color-accent) 35%, transparent); }
   :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
   section[id] { scroll-margin-top: 5rem; }
@@ -34,6 +36,10 @@
 @keyframes marquee-rev { from { transform: translateX(-50%); } to { transform: none; } }
 @keyframes flash { from { opacity: .9; transform: scale(.6); } to { opacity: 0; transform: scale(1.5); } }
 @keyframes drift { to { background-position: 48px 48px; } }
+@keyframes core-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(-8deg) rotateY(-10deg); }
+  50% { transform: translate3d(0, -7px, 18px) rotateX(8deg) rotateY(10deg); }
+}
 
 .grid-bg {
   background-image: linear-gradient(to right, rgb(255 255 255 / .05) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / .05) 1px, transparent 1px);
@@ -47,3 +53,9 @@
   background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), rgb(157 176 255 / .16), transparent 70%);
 }
 .spot:hover::before { opacity: 1; }
+.scene-stage { perspective: 900px; }
+.scene-core {
+  transform-style: preserve-3d;
+  animation: core-float 5s ease-in-out infinite;
+  box-shadow: 0 0 60px -10px rgb(157 176 255 / .6), inset 0 1px 0 rgb(255 255 255 / .18);
+}

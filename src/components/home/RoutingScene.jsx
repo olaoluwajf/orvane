@@ -38,7 +38,7 @@ export default function RoutingScene() {
   const t = TICKETS[i]
 
   return (
-    <div className="mx-auto w-full max-w-md">
+    <div className="scene-stage mx-auto w-full max-w-md">
       <div className="relative mx-auto aspect-square w-full max-w-sm" role="img" aria-label="Customer channels flowing into the Orvane AI core">
         {RINGS.map((r, n) => (
           <div key={n} className={`absolute ${r.inset} rounded-full border border-dashed border-line`} style={{ animation: `orbit ${r.secs}s linear infinite` }}>
@@ -56,7 +56,7 @@ export default function RoutingScene() {
         <div className="absolute inset-0 grid place-items-center">
           <span key={i} className={`absolute size-28 rounded-full border-2 ${t.ai ? 'border-emerald-400' : 'border-amber-400'}`} style={{ animation: 'flash 1.1s ease-out both' }} />
           <span className="absolute size-24 animate-ping rounded-full bg-accent/10 [animation-duration:3s]" />
-          <div className="relative grid size-24 place-items-center rounded-full border border-accent/50 bg-surface shadow-[0_0_60px_-10px_rgba(157,176,255,0.6)]">
+          <div className="scene-core relative grid size-24 place-items-center rounded-full border border-accent/50 bg-surface">
             <Sparkles className="size-8 text-accent" aria-hidden />
           </div>
         </div>
