@@ -3,7 +3,7 @@ import { Linkedin, Twitter } from 'lucide-react'
 export default function TeamCard({ member }) {
   const social = 'grid size-9 place-items-center rounded-full border border-line text-muted transition-colors hover:text-fg'
   return (
-    <article className="overflow-hidden rounded-3xl border border-line bg-surface">
+    <article className="group overflow-hidden rounded-3xl border border-line bg-surface">
       <img src={member.image} alt={member.name} loading="lazy" className="aspect-square w-full object-cover" />
       <div className="p-6">
         <h3 className="text-lg font-medium">{member.name}</h3>
