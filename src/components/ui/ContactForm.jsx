@@ -4,7 +4,7 @@ import Button from './Button'
 
 const EMPTY = { name: '', email: '', message: '', consent: false }
 
-function validate(v) {
+export function validate(v) {
   const e = {}
   if (!v.name.trim()) e.name = 'Enter your name.'
   if (!/^\S+@\S+\.\S+$/.test(v.email)) e.email = 'Enter a valid email address.'
