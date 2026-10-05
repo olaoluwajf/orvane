@@ -1,5 +1,6 @@
 import Container from '../components/ui/Container'
 import SectionHeading from '../components/ui/SectionHeading'
+import AboutCube from '../components/about/AboutCube'
 import StatCounter from '../components/about/StatCounter'
 import TeamCard from '../components/about/TeamCard'
 import CtaBanner from '../components/ui/CtaBanner'
@@ -11,19 +12,22 @@ export default function About() {
   return (
     <>
       <section className="pb-16 pt-16 sm:pt-24">
-        <Container>
-          <SectionHeading as="h1" label={ABOUT.eyebrow} title={ABOUT.title} text={ABOUT.intro} />
-          <div className="mt-14 grid gap-10 border-t border-line pt-10 md:grid-cols-2">
-            <div>
-              <p className="text-sm text-accent">What we do</p>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight">{ABOUT.what.title}</h2>
-              <p className="mt-3 text-pretty text-muted">{ABOUT.what.text}</p>
-            </div>
-            <div>
-              <p className="text-sm text-accent">Our mission</p>
-              <p className="mt-2 text-pretty text-xl leading-snug">{ABOUT.mission}</p>
+        <Container className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <SectionHeading as="h1" label={ABOUT.eyebrow} title={ABOUT.title} text={ABOUT.intro} />
+            <div className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
+              <div>
+                <p className="text-sm text-accent">What we do</p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight">{ABOUT.what.title}</h2>
+                <p className="mt-3 text-pretty text-muted">{ABOUT.what.text}</p>
+              </div>
+              <div>
+                <p className="text-sm text-accent">Our mission</p>
+                <p className="mt-2 text-pretty text-xl leading-snug">{ABOUT.mission}</p>
+              </div>
             </div>
           </div>
+          <AboutCube />
         </Container>
       </section>
 
