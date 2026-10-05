@@ -116,6 +116,75 @@
   100% { transform: rotateX(342deg) rotateY(360deg); }
 }
 
+.contact-visual { isolation: isolate; perspective: 900px; }
+.contact-visual-glow {
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 52% 48%, rgb(127 149 255 / .22), transparent 42%),
+    linear-gradient(rgb(255 255 255 / .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / .025) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 85%);
+}
+.contact-visual-orbit {
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgb(157 176 255 / .12);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-20deg);
+}
+.contact-visual-orbit-one { animation: contact-orbit 16s linear infinite; }
+.contact-visual-orbit-two {
+  width: 15rem;
+  height: 15rem;
+  border-style: dashed;
+  border-color: rgb(157 176 255 / .08);
+  transform: rotateX(68deg) rotateZ(35deg);
+  animation: contact-orbit 24s linear infinite reverse;
+}
+.contact-visual-card {
+  width: min(16rem, 72%);
+  border: 1px solid rgb(255 255 255 / .12);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, rgb(30 34 46 / .96), rgb(15 17 24 / .94));
+  padding: 1rem;
+  box-shadow: 0 24px 60px rgb(0 0 0 / .36), inset 0 1px rgb(255 255 255 / .08);
+  transform-style: preserve-3d;
+}
+.contact-visual-card-back {
+  animation: contact-card-back 7s ease-in-out infinite;
+}
+.contact-visual-card-front {
+  animation: contact-card-front 7s ease-in-out infinite;
+}
+.contact-visual-badge {
+  right: 1rem;
+  bottom: 1.25rem;
+  animation: contact-badge-float 5s ease-in-out infinite;
+}
+@keyframes contact-card-back {
+  0%, 100% { transform: translate3d(-2.3rem, -2.3rem, -35px) rotateY(12deg) rotateX(4deg) scale(.92); opacity: .7; }
+  50% { transform: translate3d(-2.8rem, -2.6rem, -35px) rotateY(12deg) rotateX(4deg) scale(.92); opacity: .85; }
+}
+@keyframes contact-card-front {
+  0%, 100% { transform: translate3d(1.6rem, 1.5rem, 35px) rotateY(-12deg) rotateX(-4deg); }
+  50% { transform: translate3d(1.6rem, 1rem, 35px) rotateY(-12deg) rotateX(-4deg); }
+}
+@keyframes contact-badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes contact-orbit {
+  to { rotate: 360deg; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .about-cube { animation: none; transform: rotateX(-18deg) rotateY(-25deg); }
+  .contact-visual-card-back,
+  .contact-visual-card-front,
+  .contact-visual-badge,
+  .contact-visual-orbit-one,
+  .contact-visual-orbit-two { animation: none; }
+  .contact-visual-card-back { transform: translate3d(-2.3rem, -2.3rem, -35px) rotateY(12deg) rotateX(4deg) scale(.92); opacity: .8; }
+  .contact-visual-card-front { transform: translate3d(1.6rem, 1.5rem, 35px) rotateY(-12deg) rotateX(-4deg); }
 }
